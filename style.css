@@ -1,0 +1,389 @@
+/* Global Reset & Typography */
+:root {
+  /* Vibrant & Professional Color System */
+  --primary: #6366f1; /* Indigo */
+  --primary-light: #818cf8;
+  --secondary: #2dd4bf; /* Teal/Cyan */
+  --accent: #f472b6; /* Soft Pink for small highlights */
+  
+  --bg-main: #f8fafc; /* Very light blue-gray */
+  --bg-white: #ffffff;
+  --bg-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  
+  --text-main: #0f172a; /* Slate 900 */
+  --text-muted: #475569; /* Slate 600 */
+  --text-light: #94a3b8; /* Slate 400 */
+  
+  --border-light: #f1f5f9;
+  --border-focus: #6366f1;
+  
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-main);
+  background-color: var(--bg-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header & Navigation */
+header {
+  background-color: var(--bg-white);
+  padding: 4rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-sm);
+}
+
+header h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.05em;
+}
+
+header p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px; /* Pill style */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav ul li a:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Main Layout */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  margin-bottom: 6rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* Intro Section */
+#short_intro {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: var(--bg-gradient);
+  border-radius: 24px;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+#short_intro h2 {
+  font-size: 2.75rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+#short_intro button {
+  margin-top: 2rem;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.125rem;
+}
+
+/* How It Works */
+#how-it-works ol {
+  counter-reset: item;
+  list-style-type: none;
+  padding-left: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+#how-it-works li {
+  position: relative;
+  padding: 1.5rem 1.5rem 1.5rem 4.5rem;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease;
+}
+
+#how-it-works li:hover {
+  transform: scale(1.02);
+}
+
+#how-it-works li::before {
+  content: counter(item);
+  counter-increment: item;
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, var(--secondary) 0%, #14b8a6 100%);
+  color: #fff;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 2.5rem;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+/* Calculator Form (Card Style) */
+#calculator {
+  background: white;
+  padding: 4rem;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+#calculator::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+#calculator h2 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--border-light);
+  border-radius: 12px;
+  font-size: 1rem;
+  background-color: #f8fafc;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: var(--primary);
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+  outline: none;
+}
+
+.inline-inputs {
+  display: flex;
+  gap: 1.25rem;
+}
+
+/* Radio Buttons */
+.form-group label:has(input[type="radio"]) {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 2.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #f8fafc;
+  border: 2px solid var(--border-light);
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-group label:has(input[type="radio"]:checked) {
+  border-color: var(--primary);
+  background: white;
+  color: var(--primary);
+}
+
+input[type="radio"] {
+  margin-right: 0.75rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: var(--primary);
+}
+
+/* Buttons */
+button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
+  color: #fff;
+  padding: 1.1rem 2.25rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.4);
+  filter: brightness(1.1);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Result Section */
+#result {
+  display: none;
+  background-color: #ecfdf5;
+  padding: 3rem;
+  border-radius: 24px;
+  border: 2px solid var(--secondary);
+  box-shadow: var(--shadow-md);
+  margin-top: 4rem;
+}
+
+#result h2 {
+  color: #065f46;
+}
+
+#result p {
+  font-size: 1.25rem;
+  color: #065f46;
+}
+
+#result span {
+  color: #047857;
+  font-weight: 800;
+}
+
+/* Why This Matters */
+#why-this-matters {
+  padding-top: 5rem;
+}
+
+#why-this-matters h2 {
+  font-size: 1.75rem;
+  color: var(--text-main);
+  margin-top: 3rem;
+}
+
+#why-this-matters ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  list-style: none;
+}
+
+#why-this-matters li {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-white);
+  padding: 5rem 1rem;
+  text-align: center;
+  border-top: 1px solid var(--border-light);
+  margin-top: 6rem;
+}
+
+footer h3 {
+  font-size: 2rem;
+  font-weight: 900;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+footer h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  header {
+    padding: 3rem 1rem;
+  }
+  
+  header h1 {
+    font-size: 2.75rem;
+  }
+  
+  #calculator {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  #short_intro {
+    padding: 4rem 1.5rem;
+  }
+}
