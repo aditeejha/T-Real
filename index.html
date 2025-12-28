@@ -32,6 +32,76 @@
             <li>We show you the <b>realistic timeline</b></li>
         </ol>
     </section>
+    <section id="calculator">
+    <h2>Reality Check</h2>
+    <p>Enter your task details and see how long it will *actually* take.</p>
+
+    <form id="time-form">
+        <!-- Task Name -->
+        <div class="form-group">
+            <label for="task-name">Task Name</label>
+            <input 
+                type="text" 
+                id="task-name" 
+                name="task-name" 
+                placeholder="e.g. Learn JavaScript basics"
+                required
+            >
+        </div>
+        <!-- Estimated Duration -->
+        <div class="form-group">
+            <label for="estimated-time">Your Estimated Duration (in hours)</label>
+            <input 
+                type="number" 
+                id="estimated-time" 
+                name="estimated-time" 
+                placeholder="e.g. 10"
+                min="1"
+                required
+            >
+        </div>
+        <!-- Time Available -->
+        <div class="form-group">
+            <label for="available-time">Time Available</label>
+            <div class="inline-inputs">
+                <input 
+                    type="number" 
+                    id="available-time" 
+                    name="available-time" 
+                    placeholder="e.g. 2"
+                    min="1"
+                    required
+                >
+
+                <select id="time-unit" name="time-unit" required>
+                    <option value="per-day">Hours per day</option>
+                    <option value="per-week">Hours per week</option>
+                </select>
+            </div>
+        </div>
+        <!-- Interruptions -->
+        <div class="form-group">
+            <p>Do you get interrupted while working?</p>
+
+            <label>
+                <input type="radio" name="interruptions" value="yes" required>
+                Yes
+            </label>
+
+            <label>
+                <input type="radio" name="interruptions" value="no">
+                No
+            </label>
+        </div>
+        <!-- Submit -->
+        <button type="submit">Show Reality</button>
+    </form>
+    </section>
+    <section id="result">
+        <div>
+            <p>Optimism Bias: </p>
+        </div>
+    </section>
     <section id="why-this-matters">
         <p>Time is a critical resource, and how we perceive it can significantly impact our productivity and well-being. T-Real helps you see time as it truly is, enabling better planning and execution of tasks.</p>
         <h2>Why most tools are overkill</h2>
@@ -52,6 +122,7 @@
        <h3>T-Real</h3>
        <h4>See time as it really is</h4>
        <p>First principles over fancy features</p> 
+       <h5>Built by Aditee Jha</h5>
     </footer>
 </body>
 </html>
