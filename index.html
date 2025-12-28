@@ -7,26 +7,27 @@
 </head>
 <body>
     <header>
+        <h1>T-Real</h1>
+        <p>See time as it really is</p>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Calculate Time</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#calculator">Calculate Time</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
             </ul>
-            <h1>T-Real</h1>
-            <h3>See time as it really is</h3>
         </nav>
     </header>
+    <main>
     <section id="short_intro">
-        <h1>We all see time differently, except as it should be seen</h1>
+        <h2>We all see time differently, except as it should be seen</h2>
         <p>Experience time in a new way with T-Real. See time as it really is. Calculate time with precision.</p>
-        <a href="#"><button>Calculate Time</button></a>
+        <a href="#calculator"><button>Calculate Time</button></a>
     </section>
     <section id="how-it-works">
         <h2>How It Works</h2>
         <p>T-Real uses advanced algorithms to provide accurate time calculations. Simply input your data and let T-Real do the rest.</p>
-        <ol type="1."></ol>
+        <ol>
             <li>You tell us your task.</li>
             <li>You tell us your available time and interruptions.</li>
             <li>We show you the <b>realistic timeline</b></li>
@@ -34,7 +35,7 @@
     </section>
     <section id="calculator">
     <h2>Reality Check</h2>
-    <p>Enter your task details and see how long it will *actually* take.</p>
+    <p>Enter your task details and see how long it will actually take.</p>
 
     <form id="time-form">
         <!-- Task Name -->
@@ -98,9 +99,10 @@
     </form>
     </section>
     <section id="result">
-        <div>
-            <p>Optimism Bias: </p>
-        </div>
+        <h2>Reality Output</h2>
+        <p><strong>Estimated by you:</strong> <span id="user-estimate">—</span></p>
+        <p><strong>Realistic time:</strong> <span id="real-time">—</span></p>
+        <p><strong>Optimism bias:</strong> <span id="bias">—</span></p>
     </section>
     <section id="why-this-matters">
         <p>Time is a critical resource, and how we perceive it can significantly impact our productivity and well-being. T-Real helps you see time as it truly is, enabling better planning and execution of tasks.</p>
@@ -117,12 +119,12 @@
             <li>Focuses on realistic time assessment</li>
             <li>Helps you understand your true time commitments</li>
             <li>Free to use</li>
+        </ul>
     </section>
+    </main>
     <footer>
        <h3>T-Real</h3>
        <h4>See time as it really is</h4>
-       <p>First principles over fancy features</p> 
-       <h5>Built by Aditee Jha</h5>
     </footer>
 </body>
 </html>
