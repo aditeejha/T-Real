@@ -28,15 +28,20 @@ form.addEventListener("submit", function (event) {
         hoursPerDay *= 0.8;
     }
 
-    // Calculate realistic time
-    const realisticDays = estimatedTime / hoursPerDay;
+    // Convert estimated hours to days
+const estimatedDays = estimatedTime / hoursPerDay;
 
-    // Calculate optimism bias
-    const biasPercent = Math.round(((realisticDays - estimatedTime) / estimatedTime) * 100);
+// Calculate realistic time (adding realism buffer)
+const realisticDays = estimatedDays * 1.3;
+
+// Calculate optimism bias
+const biasPercent = Math.round(((realisticDays - estimatedDays) / estimatedDays) * 100);
+
 
     // Update UI
-    userEstimateSpan.textContent = estimatedTime + " hours";
-    realTimeSpan.textContent = realisticDays.toFixed(1) + " days";
+    userEstimateSpan.textContent = estimatedDays.toFixed(1) + " days";
+realTimeSpan.textContent = realisticDays.toFixed(1) + " days";
+
     biasSpan.textContent = biasPercent + "% underestimated";
 
     // Show result section
