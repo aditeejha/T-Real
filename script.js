@@ -46,4 +46,9 @@ realTimeSpan.textContent = realisticDays.toFixed(1) + " days";
 
     // Show result section
     resultSection.style.display = "block";
+
+    //scroll for result
+    resultSection.scrollIntoView({
+        behavior: "smooth"
+    });
 });
